@@ -20,6 +20,10 @@ class IrisFeatures(BaseModel):
     petal_length: float
     petal_width: float
 
+@app.get('/')
+def index():
+    return {'message': 'Hello, stranger from github'}
+
 @app.get("/predict")
 def predict(features: IrisFeatures):
     # Convertir les caractéristiques en format numpy
